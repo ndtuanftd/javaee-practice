@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Edit Student</title>
+</h:head>
+<h:body>
+    <h2>Edit Student</h2>
+    <h:form>
+        <h:outputText value="Enter first name: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.firstName}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Enter last name: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.lastName}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Enter date of birth: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.dateOfBirth}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Enter hobbies: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.hobbies}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Enter email: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.email}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Enter state: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.state}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Enter city: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.city}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Enter gender: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.gender}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Enter username: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.userName}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Enter password: "></h:outputText>
+        <h:inputSecret value="#{studentBean.tempStudent.password}"></h:inputSecret>
+        <br></br>
+
+        <h:outputText value="Enter skills: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.skills}"></h:inputText>
+        <br></br>
+
+        <h:commandButton value="Submit" action="#{studentBean.editStudent(studentBean.tempStudent)}"></h:commandButton>
+
+    </h:form>
+</h:body>
+</html>

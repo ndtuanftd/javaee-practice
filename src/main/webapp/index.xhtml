@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Demo JSF</title>
+</h:head>
+<h:body>
+    <h2>Student</h2>
+    <!--	<h:form>-->
+    <!--		<h:outputText value="Enter your name eheheehe: "></h:outputText>-->
+    <!--		<h:inputText value="#{helloBean.name}"></h:inputText>-->
+    <!--		<h:commandButton value="Welcome Me" action="#{helloBean.sayHello()}"></h:commandButton>-->
+    <!--	</h:form>-->
+
+    <!--tạo form hiển thị student information và nút tạo form student-->
+    <h:form>
+        <h:outputText value="Enter first name: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.firstName}"></h:inputText>
+        <!--break line-->
+        <br></br>
+
+        <h:outputText value="Enter last name: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.lastName}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Enter date of birth: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.dateOfBirth}"></h:inputText>
+        <br></br>
+
+
+        <h:outputText value="Enter hobbies: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.hobbies}"></h:inputText>
+        <br></br>
+
+
+        <h:outputText value="Enter email: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.email}"></h:inputText>
+        <br></br>
+
+
+        <h:outputText value="Enter state: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.state}"></h:inputText>
+        <br></br>
+
+
+        <h:outputText value="Enter city: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.city}"></h:inputText>
+        <br></br>
+
+
+        <h:outputText value="Enter gender: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.gender}"></h:inputText>
+        <br></br>
+
+
+        <h:outputText value="Enter username: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.userName}"></h:inputText>
+        <br></br>
+
+
+        <h:outputText value="Enter password: "></h:outputText>
+        <h:inputSecret value="#{studentBean.tempStudent.password}"></h:inputSecret>
+        <br></br>
+
+
+        <!--		<h:outputText value="Enter department id: "></h:outputText>
+                <h:inputText value="#{studentBean.tempStudent.department.id}"></h:inputText>-->
+
+        <h:outputText value="Enter skills: "></h:outputText>
+        <h:inputText value="#{studentBean.tempStudent.skills}"></h:inputText>
+        <br></br>
+
+
+        <h:commandButton value="Submit" action="#{studentBean.addStudent(studentBean.tempStudent)}"></h:commandButton>
+    </h:form>
+
+    <!-- create data table to display the student information in the database -->
+    <h:dataTable value="#{studentBean.studentList}" var="student">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            <h:outputText value="#{student.id}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">First Name</f:facet>
+            <h:outputText value="#{student.firstName}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Last Name</f:facet>
+            <h:outputText value="#{student.lastName}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Date of Birth</f:facet>
+            <h:outputText value="#{student.dateOfBirth}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Hobbies</f:facet>
+            <h:outputText value="#{student.hobbies}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Email</f:facet>
+            <h:outputText value="#{student.email}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">State</f:facet>
+            <h:outputText value="#{student.state}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">City</f:facet>
+            <h:outputText value="#{student.city}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Gender</f:facet>
+            <h:outputText value="#{student.gender}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Username</f:facet>
+            <h:outputText value="#{student.userName}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Department ID</f:facet>
+            <h:outputText value="#{student.department.id}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Skills</f:facet>
+            <h:outputText value="#{student.skills}"></h:outputText>
+        </h:column>
+
+        <h:column>
+
+            <f:facet name="header">Action</f:facet>
+            <h:form>
+                <h:commandButton value="Edit" action="#{studentBean.editStudent(student.id)}"></h:commandButton>
+                <h:commandButton value="Delete" action="#{studentBean.deleteStudent(student.id)}"></h:commandButton>
+            </h:form>
+        </h:column>
+    </h:dataTable>
+
+</h:body>
+</html>

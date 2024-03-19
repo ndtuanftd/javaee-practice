@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+    <!--    <properties resource="db.properties"/>-->
+    <logger name="org.test.javaee.demotest.mapper.StudentMapper">
+        <level value="trace"/>
+        <appender-ref ref="consoleAppender" />
+    </logger>
+</configuration>

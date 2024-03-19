@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.test.javaee.demotest.mapper.DepartmentMapper" >
+
+        <resultMap type="department" id="departmentresult">
+            <id property="id" column="id" />
+            <result property="deptValue" column="dept_value" />
+        </resultMap>
+
+        <select id="getAllDepartments" resultMap="departmentresult">
+            SELECT * FROM department
+        </select>
+
+        <select id="getDepartmentById" resultMap="departmentresult" parameterType="int">
+            SELECT * FROM department WHERE id = #{id}
+        </select>
+
+    <!--get department by name-->
+        <select id="getDepartmentByName" resultMap="departmentresult" parameterType="string">
+            SELECT * FROM department WHERE dept_value = #{deptValue}
+        </select>
+
+        <insert id="insertDepartment" parameterType="department">
+            INSERT INTO department (dept_value) VALUES (#{deptValue})
+        </insert>
+
+        <update id="updateDepartment" parameterType="department">
+            UPDATE department SET dept_value = #{deptValue} WHERE id = #{id}
+        </update>
+
+        <delete id="deleteDepartment" parameterType="int">
+
+            DELETE FROM student WHERE dept_id = #{id};
+            DELETE FROM department WHERE id = #{id}
+        </delete>
+</mapper>
